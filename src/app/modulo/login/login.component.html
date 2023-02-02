@@ -1,0 +1,36 @@
+<section class="container">
+  <h2 class="text-center color">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <!-- Username -->
+    <section class="form-group">
+      <section class="form-floating mb-3">
+        <input type="username" class="form-control input" id="username" placeholder="name@example.com" formControlName="username">
+        <label for="floatingInput">Username</label>
+        <section *ngIf="username?.invalid && username?.touched">
+          <section class="text-danger">
+            Apellido requerido
+          </section>
+        </section>
+      </section>
+    </section>
+
+
+    <!-- Password -->
+    <section class="form-group">
+      <section class="form-floating mb-3">
+        <input type="password" class="form-control input" id="password" placeholder="name@example.com" formControlName="password">
+        <label for="floatingInput">Password</label>
+        <section *ngIf="password?.invalid && password?.touched">
+          <section class="text-danger">
+            Password requerido
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <button type="submit" class="btn btn-color text-white" [disabled]="!loginForm.valid">Guardar</button>
+
+  </form>
+  <!-- <section *ngIf="alert" class="text-success">Ingreso exitoso</section> -->
+</section>
